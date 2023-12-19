@@ -11,6 +11,14 @@ class MealDetailsScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text(meal.title),
+        actions:  [
+          Padding(
+            padding: const EdgeInsets.only(right: 10.00),
+            child: IconButton(onPressed: (){
+
+            }, icon: const Icon(Icons.star_border))
+          ),
+        ],
       ),
       body: Padding(
         padding: const EdgeInsets.all(10),
