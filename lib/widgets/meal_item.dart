@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:meal_app/screens/meat_details_screen.dart';
 import 'package:transparent_image/transparent_image.dart';
 
 import '../models/meal.dart';
@@ -8,12 +9,16 @@ class MealItem extends StatelessWidget {
   const MealItem({super.key, required this.meal});
 
   final Meal meal;
-String get complexityText{
-  return meal.complexity.name[0].toUpperCase()+meal.complexity.name.substring(1);
-}
-String get affordabilityText{
-  return meal.affordability.name[0].toUpperCase()+meal.affordability.name.substring(1);
-}
+
+  String get complexityText {
+    return meal.complexity.name[0].toUpperCase() +
+        meal.complexity.name.substring(1);
+  }
+
+  String get affordabilityText {
+    return meal.affordability.name[0].toUpperCase() +
+        meal.affordability.name.substring(1);
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +29,14 @@ String get affordabilityText{
       elevation: 5,
       clipBehavior: Clip.antiAlias,
       child: InkWell(
-        onTap: () {},
+        onTap: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (ctx) => MealDetailsScreen(meal: meal),
+            ),
+          );
+        },
         child: Stack(
           children: [
             FadeInImage(

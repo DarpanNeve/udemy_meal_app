@@ -4,10 +4,9 @@ import 'package:meal_app/widgets/meal_item.dart';
 import '../models/meal.dart';
 
 class MealScreen extends StatelessWidget {
-  const MealScreen(
-      {super.key, required, required this.title, required this.meals});
+  const MealScreen({super.key, required, this.title, required this.meals});
 
-  final String title;
+  final String? title;
   final List<Meal> meals;
 
   @override
@@ -22,10 +21,12 @@ class MealScreen extends StatelessWidget {
       content = Center(
         child: Column(
           children: [
-            Text('No meals found',
+            Text(
+              'No meals found',
               style: Theme.of(context).textTheme.headlineLarge!.copyWith(
-                color: Theme.of(context).colorScheme.onSecondary,
-              ),),
+                    color: Theme.of(context).colorScheme.onSecondary,
+                  ),
+            ),
             const SizedBox(height: 8),
             Text(
               'try another filter',
@@ -37,9 +38,13 @@ class MealScreen extends StatelessWidget {
         ),
       );
     }
+    if (title == null) {
+      return content;
+    }
+
     return Scaffold(
       appBar: AppBar(
-        title: Text(title),
+        title: Text(title!),
       ),
       body: content,
     );

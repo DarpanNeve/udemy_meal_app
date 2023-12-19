@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:meal_app/screens/tabs.dart';
 
 import 'Theme/theme.dart';
 import 'screens/categories.dart';
@@ -43,7 +44,7 @@ class MyApp extends StatelessWidget {
       ),
       debugShowCheckedModeBanner: false,
       themeMode: ThemeMode.system,
-      home: const CategoriesScreen(),
+      home: const TabsScreen(),
     );
   }
 }
