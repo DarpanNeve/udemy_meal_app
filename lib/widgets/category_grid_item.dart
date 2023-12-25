@@ -12,9 +12,18 @@ final List <Meal> availableMeals;
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: (){
-        final filteredMeals=availableMeals.where((meal) => meal.categories.contains(category.id)).toList();
-        Navigator.of(context).push(MaterialPageRoute(builder: (ctx) => MealScreen(title: category.title, meals: filteredMeals,))); // new
+      onTap: () {
+        final filteredMeals = availableMeals
+            .where((meal) => meal.categories.contains(category.id))
+            .toList();
+        Navigator.of(context).push(
+          MaterialPageRoute(
+            builder: (ctx) => MealScreen(
+              title: category.title,
+              meals: filteredMeals,
+            ),
+          ),
+        ); // new
       },
       splashColor: Theme.of(context).colorScheme.onBackground,
       borderRadius: BorderRadius.circular(15),

@@ -20,3 +20,5 @@ class FavouriteMealNotifier extends StateNotifier<List<Meal>> {
     }
   }
 }
+
+
