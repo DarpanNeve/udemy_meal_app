@@ -6,8 +6,7 @@ import 'Theme/theme.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
-  runApp(const ProviderScope(child: MyApp()));
-}
+  runApp(const ProviderScope(child: MyApp()));}
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
