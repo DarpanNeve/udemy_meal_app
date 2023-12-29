@@ -15,14 +15,21 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       darkTheme: ThemeData.dark().copyWith(
         colorScheme: kDarkColorScheme,
-        appBarTheme: ThemeData().appBarTheme.copyWith(
+        appBarTheme: ThemeData.dark().appBarTheme.copyWith(
           foregroundColor: kDarkColorScheme.onPrimaryContainer,
           backgroundColor: kDarkColorScheme.primaryContainer,
         ),
-        cardTheme: ThemeData().cardTheme.copyWith(
+        cardTheme: ThemeData.dark().cardTheme.copyWith(
           color: kDarkColorScheme.secondaryContainer,
           margin: const EdgeInsets.symmetric(vertical: 8, horizontal: 8),
         ),
+        textTheme: ThemeData.dark().textTheme.copyWith(
+          titleLarge: TextStyle(
+              fontWeight: FontWeight.normal,
+              color: kDarkColorScheme.onSecondaryContainer,
+              fontSize: 24),
+        ),
+
       ),
       theme: ThemeData().copyWith(
         colorScheme: kColorScheme,
